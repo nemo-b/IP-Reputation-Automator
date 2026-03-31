@@ -7,12 +7,6 @@
 - [ ] **Phase 3:** Automated JSON Logging for Audit Trails
 - [ ] **Phase 4:** GUI Development for Tier 1 Analyst Use
 
-## Tools Used
-- **Python 3.x** (Automation Core)
-- **AbuseIPDB API** (IP Reputation)
-- **VirusTotal API** (Malware Association)
-- **Linux Mint** (Development Environment)
-
 ## Operational Value
 In a high-volume SOC, manually checking 50+ IPs per shift is a waste of human capital. This tool reduces that triage time from minutes to seconds, allowing analysts to focus on actual incident response rather than data gathering.
 
@@ -20,3 +14,21 @@ In a high-volume SOC, manually checking 50+ IPs per shift is a waste of human ca
 1. Clone the repo: `git clone https://github.com/YOUR_USER/threat-enricher-tool.git`
 2. Install dependencies: `pip install -r requirements.txt`
 3. Add your API keys to a `.env` file.
+
+## 📖 Usage Instructions
+1. **Input:** Add suspicious IP addresses to `data/indicators.txt` (one per line).
+2. **Execute:** Run the tool via the terminal:
+   ```bash
+   source venv/bin/activate
+   python3 src/enricher.py
+
+## Tools Used
+- **Python 3.x** (Automation Core)
+- **AbuseIPDB API** (IP Reputation)
+- **VirusTotal API** (Malware Association)
+- **Linux Mint** (Development Environment)
+
+### Lessons in Correlation:
+During development, I observed that specific indicators (e.g., `205.210.31.227`) may return a 0% Confidence Score on AbuseIPDB while maintaining high detection rates on VirusTotal.
+
+**Analysis:** This highlights the necessity of multi-source enrichment. An IP may not be currently engaged in "noisy" brute-force activity (tracked by AbuseIPDB) but may still serve as a "silent" malware distribution point (tracked by VirusTotal). This tool ensures analysts don't miss these "Low-and-Slow" threats.
