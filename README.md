@@ -28,6 +28,8 @@ In a high-volume SOC, manually checking 50+ IPs per shift is a waste of human ca
 - **VirusTotal API** (Malware Association)
 - **Linux Mint** (Development Environment)
 
+*Data Sources: > Sample indicators provided in data/sample_indicators.txt are sourced from the AbuseIPDB "Recent Reports" feed. These are public, real-time indicators of compromise (IoCs) used for educational triage purposes.*
+
 ### Lessons in Correlation:
 During development, I observed that specific indicators (e.g., `205.210.31.227`) may return a 0% Confidence Score on AbuseIPDB while maintaining high detection rates on VirusTotal.
 
