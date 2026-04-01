@@ -1,0 +1,76 @@
+import customtkinter as ctk
+from enricher import ThreatEnricher
+import json
+import os
+import time
+
+# Set Dark theme (Who Uses light?)
+ctk.set_appearance_mode("dark") 
+ctk.set_default_color_theme("blue")
+
+class SOCDashboard(ctk.CTk):
+    def __init__(self):
+        super().__init__()
+
+        # Window Setup
+        self.title("IP-Reputation-Automator | Analyst Dashboard")
+        self.geometry("800x600")
+        
+        # Initializing Backend Engine
+        self.enricher = ThreatEnricher()
+
+        # --- UI ELEMENTS ---
+        self.header = ctk.CTkLabel(self, text="🛡️ Threat Intelligence Triage", font=("Roboto", 28, "bold"))
+        self.header.pack(pady=20)
+
+        # Input Area
+        self.input_frame = ctk.CTkFrame(self)
+        self.input_frame.pack(pady=10, padx=20, fill="x")
+
+        self.ip_entry = ctk.CTkEntry(self.input_frame, placeholder_text="Enter IP (e.g., 8.8.8.8)", width=400)
+        self.ip_entry.pack(side="left", padx=10, pady=10)
+
+        self.analyze_btn = ctk.CTkButton(self.input_frame, text="Run Analysis", command=self.process_ip)
+        self.analyze_btn.pack(side="left", padx=10)
+
+        # Result Display (The "Report" Area)
+        self.result_display = ctk.CTkTextbox(self, width=750, height=350, font=("Courier New", 14))
+        self.result_display.pack(pady=20, padx=20)
+        self.result_display.insert("0.0", "System Ready...\nWaiting for Analyst input.")
+
+    def process_ip(self):
+        target_ip = self.ip_entry.get().strip()
+        if not target_ip:
+            return
+
+        self.result_display.delete("0.0", "end")
+        self.result_display.insert("end", f"[*] Querying Threat Intelligence for: {target_ip}...\n")
+        self.update()
+
+        # Call the Logic from enricher.py
+        abuse = self.enricher.check_ip_abuse(target_ip)
+        vt = self.enricher.check_vt(target_ip)
+        
+        score = abuse.get('abuseConfidenceScore', 0)
+        risk = self.enricher.get_risk_level(score)
+        detections = vt.get('malicious', 0)
+        isp = abuse.get('isp', 'Unknown Source')
+
+        # Format the "Professional Report"
+        report = (
+            f"\n" + "="*40 + "\n"
+            f" ANALYST REPORT: {target_ip}\n"
+            f" " + "="*40 + "\n"
+            f" [STATUS]    Risk Level: {risk}\n"
+            f" [ABUSE]     Confidence Score: {score}%\n"
+            f" [VIRUSTOTAL] Malicious Detections: {detections}\n"
+            f" [NETWORK]   ISP: {isp}\n"
+            f" " + "-"*40 + "\n"
+            f" RECOMMENDED ACTION:\n"
+            f" {'>>> BLOCK IMMEDIATELY' if score > 75 else '>>> MONITOR TRAFFIC' if score > 20 else '>>> NO ACTION REQUIRED'}\n"
+            f" " + "="*40 + "\n"
+        )
+
+me    app = SOCDashboard()
+    app.mainloop()
+
