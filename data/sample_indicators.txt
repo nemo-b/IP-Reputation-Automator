@@ -1,0 +1,5 @@
+8.8.8.8          # Google DNS (Clean)
+1.1.1.1          # Cloudflare (Clean)
+139.162.131.111  # Known Scanner
+147.50.231.135   # Known Malicious
+205.210.31.227   # The "Mystery" IP we found
