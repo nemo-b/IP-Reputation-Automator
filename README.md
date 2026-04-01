@@ -33,7 +33,7 @@ In a high-volume SOC, manually checking 50+ IPs per shift is a waste of human ca
 ## 📸 Example Visuals
 
 <p align="center">
-  <img src="images/Threat%Triage%20CLI%20Example.png" alt="Threat Triage CLI Example" width="500">
+  <img src="images/Threat%20Triage%20CLI%20Example.png" alt="Threat Triage CLI Example" width="500">
 </p>
 
 *Example of the CLI (Command Line Interface) version.*
