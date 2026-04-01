@@ -33,22 +33,28 @@ In a high-volume SOC, manually checking 50+ IPs per shift is a waste of human ca
 ## 📸 Example Visuals
 
 <p align="center">
-  <img src="images/Nmap%20Topology%20Example.png" alt="SOC Dashboard Example" width="500">
+  <img src="images/Threat%Triage%20CLI%20Example.png" alt="Threat Triage CLI Example" width="500">
 </p>
 
-*Example Nmap network Map from the lab.*
+*Example of the CLI (Command Line Interface) version.*
 
 <p align="center">
-  <img src="images/Windows%20Dashboard.png" alt="SOC Dashboard Example" width="500">
+  <img src="images/Threat%20Triage%20GUI%20Example.png" alt="Threat Triage GUI Example" width="500">
 </p>
 
-*Example Splunk dashboard from the lab.*
+*Example of the GUI (Graphical User Interface) version.*
 
 <p align="center">
-  <img src="images/Linux%20Dashboard.png" alt="SOC Dashboard Example" width="500">
+  <img src="images/Bulk%20Triage%20Example.png" alt="Bulk Triage Example" width="500">
 </p>
 
-*Example Linux dashboard from the lab.*
+*Example of the "Bulk Triage" tool in the GUI version.*
+
+<p align="center">
+  <img src="images/Logging%20Example.png" alt="Logging Example" width="500">
+</p>
+
+*Example of the Logging from both versions*
 
 ### Lessons in Correlation:
 During development, I observed that specific indicators (e.g., `205.210.31.227`) may return a 0% Confidence Score on AbuseIPDB while maintaining high detection rates on VirusTotal.
