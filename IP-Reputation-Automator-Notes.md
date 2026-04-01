@@ -9,43 +9,43 @@
 ### **Phase 0: Assumed Baseline (Guaranteed)**
 _Focus: The foundational environment of a security developer._
 
-- [ ]  **OS Environment:** Currently operating under **Linux Mint 22** (Standardized dev environment).
-- [ ]  **- **Virtualization & Isolation:** Leveraged Python **Virtual Environments (venv)** to kill OS-level dependency conflicts before they started.
-- [ ]  - **Secret Management:** Strictly using **.env** structures. No hardcoded API keys allowed—OPSEC is a priority.
+- [x]  **OS Environment:** Currently operating under **Linux Mint 22** (Standardized dev environment).
+- [x]  **- **Virtualization & Isolation:** Leveraged Python **Virtual Environments (venv)** to kill OS-level dependency conflicts before they started.
+- [x]  - **Secret Management:** Strictly using **.env** structures. No hardcoded API keys allowed—OPSEC is a priority.
 
 ---
 ### **Phase 1: Environment Orchestration & Base Logic**
 
-- [ ]  **Logic Foundation:** Established the core `ThreatEnricher` class to handle AbuseIPDB API requests.
-- [ ]  **Environment Hardening:** - Successfully wrestled with **PEP 668** errors by forcing all project-specific libraries into the venv.
-- [ ]  **Initial API Security:** - Verified `.env` loading is stable. Credentials are safe and sound.
+- [x]  **Logic Foundation:** Established the core `ThreatEnricher` class to handle AbuseIPDB API requests.
+- [x]  **Environment Hardening:** - Successfully wrestled with **PEP 668** errors by forcing all project-specific libraries into the venv.
+- [x]  **Initial API Security:** - Verified `.env` loading is stable. Credentials are safe and sound.
 
 > **Key Question:** _Can I build a secure script that interacts with external threat intelligence without exposing my own credentials?_
 
 ---
 ### **Phase 2: Data Correlation & Bulk Processing**
 
-- [ ]  **Multi-Source Triage:** Integrated **VirusTotal API**. Two opinions are always better than one when triaging.
-- [ ]  **Automated Batching:** Developed the terminal "Bulk Mode" to chew through `indicators.txt` using iterative loops.
-- [ ]  **Rate-Limit Handling:** Implemented `time.sleep` logic. We play nice with free-tier API thresholds to avoid getting blocked.
+- [x]  **Multi-Source Triage:** Integrated **VirusTotal API**. Two opinions are always better than one when triaging.
+- [x]  **Automated Batching:** Developed the terminal "Bulk Mode" to chew through `indicators.txt` using iterative loops.
+- [x]  **Rate-Limit Handling:** Implemented `time.sleep` logic. We play nice with free-tier API thresholds to avoid getting blocked.
 
 > **Key Question:** _Can I automate the "noise reduction" process by correlating data from multiple independent sources?_
 
 ---
 ### **Phase 3: Telemetry Persistence & Audit Trails**
 
-- [ ]  **JSON Logging Engine:** Built a centralized JSON logging engine to capture search results, timestamps, and risk levels.
-- [ ]  **Persistence Engineering:** Regardless of using CLI or the GUI, the audit trail is created. No investigation goes undocumented.
-- [ ]  **Documentation Standards:** Finalized `README.md` and chose the **MIT License**. We're officially "Open Source" professional now.
+- [x]  **JSON Logging Engine:** Built a centralized JSON logging engine to capture search results, timestamps, and risk levels.
+- [x]  **Persistence Engineering:** Regardless of using CLI or the GUI, the audit trail is created. No investigation goes undocumented.
+- [x]  **Documentation Standards:** Finalized `README.md` and chose the **MIT License**. We're officially "Open Source" professional now.
 
 > **Key Question:** _If an investigation happened yesterday, do I have the forensic evidence to prove what was found?_
 
 ---
 ### **Phase 4: Interface Design & Analyst Experience (UX)**
 
-- [ ]  **GUI Development:** Created a functional GUI using **CustomTkinter** for real-time triage.
-- [ ]  **Visual Signaling:** - Implemented **Red/Orange/Green** color-coding. If it's malicious, the analyst should see it before they read it. (For the sake of Ease-of-Use)
-- [ ]  **Functional Modularity:** Refactored the UI to include a **"File Upload"** button. No more manual typing for bulk files.
+- [x]  **GUI Development:** Created a functional GUI using **CustomTkinter** for real-time triage.
+- [x]  **Visual Signaling:** - Implemented **Red/Orange/Green** color-coding. If it's malicious, the analyst should see it before they read it. (For the sake of Ease-of-Use)
+- [x]  **Functional Modularity:** Refactored the UI to include a **"File Upload"** button. No more manual typing for bulk files.
 
 > **Key Question:** _Can I build a tool that a Tier 1 Analyst can use effectively without needing to touch the underlying code?_
 ---
