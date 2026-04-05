@@ -49,6 +49,8 @@ _Focus: The foundational environment of a security developer._
 
 > **Key Question:** _Can I build a tool that a Tier 1 Analyst can use effectively without needing to touch the underlying code?_
 
+---
+
 ### **Phase 5: SIEM Integration & Telemetry Pipeline**
 
 - [x] **Splunk Ingestion:** Configured a "File Monitor" data input to track the `triage_results.json` log in real-time.
