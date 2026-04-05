@@ -11,7 +11,7 @@
 In a high-volume SOC, manually checking 50+ IPs per shift is a waste of human capital. This tool reduces that triage time from minutes to seconds, allowing analysts to focus on actual incident response rather than data gathering.
 
 ## Setup
-1. Clone the repo: `git clone https://github.com/YOUR_USER/threat-enricher-tool.git`
+1. Clone the repo: `git clone https://github.com/nemo_b/threat-enricher-tool.git`
 2. Install dependencies: `pip install -r requirements.txt`
 3. Add your API keys to a `.env` file.
 
