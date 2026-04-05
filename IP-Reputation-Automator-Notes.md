@@ -48,6 +48,14 @@ _Focus: The foundational environment of a security developer._
 - [x]  **Functional Modularity:** Refactored the UI to include a **"File Upload"** button. No more manual typing for bulk files.
 
 > **Key Question:** _Can I build a tool that a Tier 1 Analyst can use effectively without needing to touch the underlying code?_
+
+### **Phase 5: SIEM Integration & Telemetry Pipeline**
+
+- [x] **Splunk Ingestion:** Configured a "File Monitor" data input to track the `triage_results.json` log in real-time.
+- [x] **Source Type Mapping:** Successfully mapped the JSON output to Splunk’s internal indexing engine for searchable field extraction.
+- [x] **Live Telemetry Validation:** Verified that manual lookups (e.g., 123.123.123.123) are ingested and indexed within seconds.
+
+> **Key Question:** _Can I centralize the intelligence gathered by my tool so it can be used for long-term trend analysis and correlation?_
 ---
 
 ## **Troubleshooting Summary**
@@ -81,6 +89,6 @@ _Focus: The foundational environment of a security developer._
 
 ### **Possible Future Goals**
 
-- **SIEM Connector:** Writing a script to push `triage_results.json` directly into my Splunk Home Lab for long-term trend analysis. is likely the best move to further the project. 
+- **SIEM Connector:** Writing a script to push `triage_results.json` directly into my Splunk Home Lab for long-term trend analysis. is likely the best move to further the project. (UPDATE: Added!)
 - **PDF Reporting:** Generating a "Formal Triage Report" that an analyst can attach directly to a ticket could be helpful.
 - **Email Alerts:** Automating an "Executive Summary" email for every High-Risk IP found in bulk scans.
