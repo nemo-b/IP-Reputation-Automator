@@ -6,6 +6,7 @@
 - [ ] **Phase 2:** Bulk Processing & VirusTotal Integration
 - [ ] **Phase 3:** Automated JSON Logging for Audit Trails
 - [ ] **Phase 4:** GUI Development for Tier 1 Analyst Use
+- [ ] **Phase 5:** SIEM Integration & Telemetry Pipeline
 
 ## Operational Value
 In a high-volume SOC, manually checking 50+ IPs per shift is a waste of human capital. This tool reduces that triage time from minutes to seconds, allowing analysts to focus on actual incident response rather than data gathering.
