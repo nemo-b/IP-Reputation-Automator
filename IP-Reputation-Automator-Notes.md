@@ -56,6 +56,7 @@ _Focus: The foundational environment of a security developer._
 - [x] **Splunk Ingestion:** Configured a "File Monitor" data input to track the `triage_results.json` log in real-time.
 - [x] **Source Type Mapping:** Successfully mapped the JSON output to Splunk’s internal indexing engine for searchable field extraction.
 - [x] **Live Telemetry Validation:** Verified that manual lookups (e.g., 123.123.123.123) are ingested and indexed within seconds.
+- [x] **Interoperability Validation**: Successfully triggered a "Machine-Mode" lookup from the Linux terminal and verified near-instant ingestion into the Splunk Indexer.
 
 > **Key Question:** _Can I centralize the intelligence gathered by my tool so it can be used for long-term trend analysis and correlation?_
 ---
@@ -79,6 +80,14 @@ _Focus: The foundational environment of a security developer._
 | **Credential Exposure**  | High security risk       | Implemented `.env` secret management | **Secure Development**    |
 | **Data Inconsistency**   | Fragmented audit trail   | Centralized JSON logging logic       | **Data Integrity**        |
 
+|**Challenge**|**Impact**|**Resolution**|**Skill Demonstrated**|
+|---|---|---|---|
+|**Dependency Conflicts**|Prevented tool execution|Implemented `venv` isolation|**System Administration**|
+|**Missing OS Libraries**|GUI failed to render|Bridged `python3-tk` to host OS|**Linux Troubleshooting**|
+|**Credential Exposure**|High security risk|Implemented `.env` secret management|**Secure Development**|
+|**Data Inconsistency**|Fragmented audit trail|Centralized JSON logging logic|**Data Integrity**|
+|**Manual Bottleneck**|Prevented automation|**Implemented CLI Argument Logic**|**SOAR / Orchestration**|
+
 (TL;DR summaries) 
 
 ---
@@ -86,11 +95,15 @@ _Focus: The foundational environment of a security developer._
 
 - **Automation as a Filter:** Automation shouldn't replace the analyst; it should filter the noise so the analyst can focus on the "High Risk" results.
 - **Logging as Evidence:** In a SOC, an investigation that isn't logged didn't happen. The shared JSON log ensures a consistent chain of evidence across different tool versions.
+- **Automation as an Orchestrator:** True SOAR isn't just about scripts; it's about interoperability. By adding a "Machine-Readable" entry point, the tool can now act as a force multiplier for a SIEM.
+- **Logging as a Feedback Loop:** In a closed-loop system, the script’s output becomes the SIEM’s input. This creates a continuous cycle of enrichment and visibility.
 
 ---
 
 ### **Possible Future Goals**
 
-- **SIEM Connector:** Writing a script to push `triage_results.json` directly into my Splunk Home Lab for long-term trend analysis. is likely the best move to further the project. (UPDATE: Added!)
-- **PDF Reporting:** Generating a "Formal Triage Report" that an analyst can attach directly to a ticket could be helpful.
-- **Email Alerts:** Automating an "Executive Summary" email for every High-Risk IP found in bulk scans.
+- [x] **SIEM Connector:** Writing a script to push `triage_results.json` directly into my Splunk Home Lab for long-term trend analysis. is likely the best move to further the project. (UPDATE: Added!)
+- [ ] **Dashboard Visualization:** Creating a "SOC Analyst Executive Dashboard" in Splunk to visualize risk levels and ISP distributions from the enrichment data. **(Currently Developing)**
+- [ ] **PDF Reporting:** Generating a "Formal Triage Report" that an analyst can attach directly to a ticket could be helpful.
+- [ ] **Email Alerts:** Automating an "Executive Summary" email for every High-Risk IP found in bulk scans.
+- [ ] **Honeypot Trigger:** Integrating the tool with a "Cowrie" Honeypot to automatically triage real-world brute-force IPs as they hit the network.
