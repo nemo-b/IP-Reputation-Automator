@@ -57,6 +57,18 @@ In a high-volume SOC, manually checking 50+ IPs per shift is a waste of human ca
 
 *Example of the Logging from both versions*
 
+<p align="center">
+  <img src="images/IP%20Reputation%20Automator%20Splunk%20Results.png" alt="Splunk Integration Example" width="500">
+</p>
+
+*Example of the log results from Splunk*
+
+<p align="center">
+  <img src="images/IP%20Reputation%20Automator%20Dashboard%20Example.png" alt="Dashboard Example" width="500">
+</p>
+
+*Example of the IP-Rep Dashboard from Splunk*
+
 ### Lessons in Correlation:
 During development, I observed that specific indicators (e.g., `205.210.31.227`) may return a 0% Confidence Score on AbuseIPDB while maintaining high detection rates on VirusTotal.
 
