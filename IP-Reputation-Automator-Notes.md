@@ -61,7 +61,19 @@ _Focus: The foundational environment of a security developer._
 > **Key Question:** _Can I centralize the intelligence gathered by my tool so it can be used for long-term trend analysis and correlation?_
 ---
 
+### Phase 6: SIEM Visualization & Analyst Intelligence
+
+- [x] **Dynamic Field Mapping:** Leveraged Splunk's stats engine to correlate risk_label and score into real-time KPI metrics.
+- [x] **Geospatial Intelligence (Geo-IP):** Integrated the iplocation and geostats commands to map triaged IPs to their physical geographic origins.
+- [x] **Risk Distribution Analytics:** Developed a color-coded visualization strategy (High/Medium/Low) to provide immediate situational awareness of network threat levels.
+- [x] **Infrastructure Correlation:** Created panels to identify "Repeat Offender" ISPs and hosting providers frequently associated with malicious activity.
+
+> **Key Question:** _How can I turn a mountain of log data into a clear, visual story that allows a SOC lead to make a decision in under 5 seconds?_
+---
+
 ## **Troubleshooting Summary**
+
+### General Creation
 
 |**Incident**|**Root Cause**|**Resolution**|**Analyst Insight**|
 |---|---|---|---|
@@ -71,7 +83,7 @@ _Focus: The foundational environment of a security developer._
 |**Indentation Errors**|Mixed tabs/spaces during the transition to modular functions.|Refactored the code into strict **Modular Functions** (`save_to_logs`, `process_ip`).|Clean code isn't just about style; it's about preventing scope-related logic failures.|
 
 
-### Quick Reference: The Engineering "Pivots"
+### GUI Creation
 
 | **Challenge**            | **Impact**               | **Resolution**                       | **Skill Demonstrated**    |
 | ------------------------ | ------------------------ | ------------------------------------ | ------------------------- |
@@ -80,6 +92,7 @@ _Focus: The foundational environment of a security developer._
 | **Credential Exposure**  | High security risk       | Implemented `.env` secret management | **Secure Development**    |
 | **Data Inconsistency**   | Fragmented audit trail   | Centralized JSON logging logic       | **Data Integrity**        |
 
+### SEIM Integration (Through Splunk)
 |**Challenge**|**Impact**|**Resolution**|**Skill Demonstrated**|
 |---|---|---|---|
 |**Dependency Conflicts**|Prevented tool execution|Implemented `venv` isolation|**System Administration**|
@@ -87,6 +100,14 @@ _Focus: The foundational environment of a security developer._
 |**Credential Exposure**|High security risk|Implemented `.env` secret management|**Secure Development**|
 |**Data Inconsistency**|Fragmented audit trail|Centralized JSON logging logic|**Data Integrity**|
 |**Manual Bottleneck**|Prevented automation|**Implemented CLI Argument Logic**|**SOAR / Orchestration**|
+
+### Dashboard Implementation
+|**Dashboard Component**|**Splunk Command / Logic**|**Intelligence Value**|
+|---|---|---|
+|**Global Threat Map**|`|iplocation ip|
+|**Severity Pie Chart**|`|stats count by risk_label`|
+|**ISP Reputation Bar**|`|top limit=10 isp`|
+|**Triage Audit Table**|`|table _time, ip, score, isp`|
 
 (TL;DR summaries) 
 
